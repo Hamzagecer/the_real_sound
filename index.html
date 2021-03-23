@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>The Real Sound</title>
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
@@ -19,6 +21,36 @@
                 <li><a href="#">CONNECT</a></li>
             </ul>
         </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>THE<br>REAL<br>SOUND</h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here To Listen</p>
+                <img src="./img/play.png" id="icon">
+            </div>
+        </div>
     </div>
+
+    <audio id="mySong">
+        <source src="./img/music.mp3" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+
+        icon.onclick = function () {
+            if (mySong.paused) {
+                mySong.play();
+                icon.src = "./img/pause.png";
+            } else {
+                mySong.pause();
+                icon.src = "./img/play.png";
+            }
+        }
+    </script>
+
 </body>
+
 </html>
